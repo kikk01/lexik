@@ -88,30 +88,30 @@ include_once('viewPopUp.php');
         
         <tr> 
             <td><input type="checkbox" value="<?=$group['nom']?>,<?=$group['email']?>" id="id<?=$i?>">
-            <td><?= $group['groupe'] ?></td>
-            <td><?= $group['nom'] ?></td>
-            <td><?= $group['prenom'] ?></td>
-            <td><?= $group['email'] ?></td>
+            <td><?php echo htmlspecialchars($group['groupe']) ?></td>
+            <td><?php echo htmlspecialchars($group['nom']) ?></td>
+            <td><?php echo htmlspecialchars($group['prenom']) ?></td>
+            <td><?php echo htmlspecialchars($group['email']) ?></td>
             <td>
-                <button data-toggle="modal" href="#<?=$group['nom']?>" class="btn btn-details">détails</button>
+                <button data-toggle="modal" href="#<?php echo htmlspecialchars($group['nom'])?>" class="btn btn-details">détails</button>
                 <div class="modal fade" id="<?=$group['nom']?>">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-body">
-                                <?= $group['nom'] ?> a <?= $age->format('%Y'); ?>ans
+                                <?php echo htmlspecialchars($group['nom']) ?> a <?= $age->format('%Y'); ?>ans
                             </div>
                         </div>
                     </div>
                 </div>
             </td>
             <td>
-                <button data-toggle="modal" href="#sup<?=$group['nom']?>" class="btn">Supprimer</button>
-                <div class="modal fade" id="sup<?=$group['nom']?>">
+                <button data-toggle="modal" href="#sup<?php echo htmlspecialchars($group['nom'])?>" class="btn">Supprimer</button>
+                <div class="modal fade" id="sup<?php echo htmlspecialchars($group['nom'])?>">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-body">
                                 <form action="index.php?delete=<?= $group['email']?>" method="post">
-                                    <p>Supprimer <?=$group['nom']?> ?</p>
+                                    <p>Supprimer <?php echo htmlspecialchars($group['nom'])?> ?</p>
                                     <input type="submit" class="btn button-orange" value="Valider">
                                     <button class="btn" data-dismiss="modal">Annuler</button>
                                 </form>
