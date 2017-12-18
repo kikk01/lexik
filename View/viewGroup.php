@@ -111,7 +111,7 @@ include_once('viewPopUp.php');
                         <div class="modal-content">
                             <div class="modal-body">
                                 <form action="index.php?delete=<?= $group['email']?>" method="post">
-                                    <p>Supprimer <?php echo htmlspecialchars($group['nom'])?> ?</p>
+                                    <p>Supprimer <?php echo htmlspecialchars$group['nom']?> ?</p>
                                     <input type="submit" class="btn button-orange" value="Valider">
                                     <button class="btn" data-dismiss="modal">Annuler</button>
                                 </form>
